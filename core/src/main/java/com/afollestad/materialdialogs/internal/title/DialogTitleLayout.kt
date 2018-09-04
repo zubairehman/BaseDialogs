@@ -91,7 +91,7 @@ internal class DialogTitleLayout(
     )
 
     val iconViewHeight = if (iconView.isVisible()) iconView.measuredHeight else 0
-    val subTitleViewHeight = if (subTitleView.isVisible()) subTitleView.measuredHeight else 0
+//    val subTitleViewHeight = if (subTitleView.isVisible()) subTitleView.measuredHeight else 0
     val requiredHeight = max(iconViewHeight, titleView.measuredHeight)
     val actualHeight = requiredHeight + frameMarginVertical + titleMarginBottom
 
@@ -163,13 +163,13 @@ internal class DialogTitleLayout(
 
       if (isRtl()) {
         subTitleRight = measuredWidth - frameMarginHorizontal
-        subTitleBottom = measuredHeight - titleMarginBottom
-        subTitleTop = subTitleBottom - subTitleView.measuredHeight
+        subTitleBottom = titleBottom
+        subTitleTop = titleTop
         subTitleLeft = titleLeft
       } else {
-        subTitleLeft = titleRight
-        subTitleBottom = measuredHeight - titleMarginBottom
-        subTitleTop = subTitleBottom - subTitleView.measuredHeight
+        subTitleLeft = measuredWidth - subTitleView.measuredWidth - (frameMarginHorizontal / 2)
+        subTitleBottom = titleBottom
+        subTitleTop = titleTop
         subTitleRight = subTitleLeft + subTitleView.measuredWidth
       }
       subTitleView.layout(subTitleLeft, subTitleTop, subTitleRight, subTitleBottom)

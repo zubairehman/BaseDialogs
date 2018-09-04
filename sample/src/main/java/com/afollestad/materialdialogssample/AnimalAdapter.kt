@@ -13,7 +13,7 @@ class AnimalAdapter(val items : ArrayList<String>, val context: Context) : Recyc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.tvAnimalType?.text = items.get(position)
+        holder.tvAnimalType?.text = items.get(position)
     }
 
     // Gets the number of animals in the list

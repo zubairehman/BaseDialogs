@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         basic_checkbox_titled_buttons.setOnClickListener {
             MaterialDialog(this).show {
                 headerColor(R.color.primaryDark_custom)
-                title(R.string.socialNetworks)
+                title(text = "This is a sample title and i am trying to make it long")
                 titleColor(R.color.white)
                 subTitle(text = "2/2")
                 subTitleColor(R.color.white)
