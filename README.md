@@ -1,7 +1,4 @@
-# Material Dialogs
-
-**Looking for the README for versions before 2.0? [Click here](README_OLD.md). Note that pre-2.0 
-versions will no longer receive support.**
+# Base Dialogs
 
 [![Build Status](https://travis-ci.org/afollestad/material-dialogs.svg)](https://travis-ci.org/afollestad/material-dialogs)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0a4acc30a9ce440087f7688735359bb8)](https://www.codacy.com/app/drummeraidan_50/material-dialogs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=afollestad/material-dialogs&amp;utm_campaign=Badge_Grade)

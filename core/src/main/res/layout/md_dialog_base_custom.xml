@@ -29,8 +29,8 @@
         <com.afollestad.materialdialogs.internal.rtl.RtlTextView
             android:id="@+id/md_text_sub_title"
             style="@style/MD_Dialog_Title_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:visibility="gone"
             tools:text="Sub Title" />
 

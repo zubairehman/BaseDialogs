@@ -149,10 +149,10 @@ internal fun MaterialDialog.populateText(
 
 internal fun MaterialDialog.setHeaderColor(
         @ColorRes colorRes: Int? = null,
-        @ColorInt colorInt: Int? = 0) {
+        @ColorInt colorInt: Int? = null) {
 
     this.view.apply {
-        val value = getColor(colorRes)
+        val value = colorInt ?: getColor(colorRes)
         if (true) {
             titleLayout.setBackgroundColor(value)
         }
@@ -161,10 +161,10 @@ internal fun MaterialDialog.setHeaderColor(
 
 internal fun MaterialDialog.setTitleColor(
         @ColorRes colorRes: Int? = null,
-        @ColorInt colorInt: Int? = 0) {
+        @ColorInt colorInt: Int? = null) {
 
     this.view.apply {
-        val value = getColor(colorRes)
+        val value = colorInt ?: getColor(colorRes)
         if (true) {
             titleLayout.titleView.setTextColor(value)
         }
@@ -183,6 +183,18 @@ internal fun MaterialDialog.setTitleColor(
         )
     }
     this.textViewMessage!!.updateMargin(top = windowVerticalPadding)
+}
+
+internal fun MaterialDialog.setSubTitleColor(
+        @ColorRes colorRes: Int? = null,
+        @ColorInt colorInt: Int? = null) {
+
+    this.view.apply {
+        val value = colorInt ?: getColor(colorRes)
+        if (true) {
+            titleLayout.subTitleView.setTextColor(value)
+        }
+    }
 }
 
 internal fun MaterialDialog.hideKeyboard() {

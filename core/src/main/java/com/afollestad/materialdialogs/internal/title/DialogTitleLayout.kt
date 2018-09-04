@@ -41,6 +41,7 @@ internal class DialogTitleLayout(
 
   private val iconMargin = dimenPx(R.dimen.md_icon_margin)
   private val iconSize = dimenPx(R.dimen.md_icon_size)
+  private val subTitleSize = dimenPx(R.dimen.md_icon_size)
 
   internal lateinit var iconView: ImageView
   internal lateinit var titleView: TextView
@@ -66,7 +67,7 @@ internal class DialogTitleLayout(
     }
 
     val parentWidth = getSize(widthMeasureSpec)
-    var titleMaxWidth = parentWidth - (frameMarginHorizontal * 2)
+    var titleMaxWidth = ((parentWidth - (frameMarginHorizontal * 2)) )
 
     if (iconView.isVisible()) {
       iconView.measure(
@@ -76,12 +77,21 @@ internal class DialogTitleLayout(
       titleMaxWidth -= iconView.measuredWidth
     }
 
+    if (subTitleView.isVisible()) {
+      subTitleView.measure(
+              makeMeasureSpec(subTitleSize, EXACTLY),
+              makeMeasureSpec(subTitleSize, EXACTLY)
+      )
+      titleMaxWidth -= subTitleView.measuredWidth
+    }
+
     titleView.measure(
         makeMeasureSpec(titleMaxWidth, AT_MOST),
         makeMeasureSpec(0, UNSPECIFIED)
     )
 
     val iconViewHeight = if (iconView.isVisible()) iconView.measuredHeight else 0
+    val subTitleViewHeight = if (subTitleView.isVisible()) subTitleView.measuredHeight else 0
     val requiredHeight = max(iconViewHeight, titleView.measuredHeight)
     val actualHeight = requiredHeight + frameMarginVertical + titleMarginBottom
 
@@ -104,6 +114,7 @@ internal class DialogTitleLayout(
     val titleBottom: Int
     val titleTop: Int
     var titleRight: Int
+
     if (isRtl()) {
       titleRight = measuredWidth - frameMarginHorizontal
       titleBottom = measuredHeight - titleMarginBottom
@@ -116,6 +127,7 @@ internal class DialogTitleLayout(
       titleRight = titleLeft + titleView.measuredWidth
     }
 
+    //for icon
     if (iconView.isVisible()) {
       val titleHalfHeight = (titleBottom - titleTop) / 2
       val titleMidPoint = titleBottom - titleHalfHeight
@@ -140,6 +152,27 @@ internal class DialogTitleLayout(
         titleLeft = iconRight + iconMargin
       }
       iconView.layout(iconLeft, iconTop, iconRight, iconBottom)
+    }
+
+    //for subTitle
+    if (subTitleView.isVisible()) {
+      var subTitleLeft: Int
+      val subTitleBottom: Int
+      val subTitleTop: Int
+      var subTitleRight: Int
+
+      if (isRtl()) {
+        subTitleRight = measuredWidth - frameMarginHorizontal
+        subTitleBottom = measuredHeight - titleMarginBottom
+        subTitleTop = subTitleBottom - subTitleView.measuredHeight
+        subTitleLeft = titleLeft
+      } else {
+        subTitleLeft = titleRight
+        subTitleBottom = measuredHeight - titleMarginBottom
+        subTitleTop = subTitleBottom - subTitleView.measuredHeight
+        subTitleRight = subTitleLeft + subTitleView.measuredWidth
+      }
+      subTitleView.layout(subTitleLeft, subTitleTop, subTitleRight, subTitleBottom)
     }
 
     titleView.layout(titleLeft, titleTop, titleRight, titleBottom)

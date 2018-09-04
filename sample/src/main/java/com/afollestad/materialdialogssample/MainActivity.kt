@@ -135,6 +135,8 @@ class MainActivity : AppCompatActivity() {
                 headerColor(R.color.primaryDark_custom)
                 title(R.string.socialNetworks)
                 titleColor(R.color.white)
+                subTitle(text = "2/2")
+                subTitleColor(R.color.white)
                 message(R.string.useGoogleLocationServicesPrompt)
                 positiveButton(R.string.agree)
                 negativeButton(R.string.disagree)
@@ -607,7 +609,7 @@ class MainActivity : AppCompatActivity() {
     private fun showCustomViewDialog(isFullScreen: Boolean = false) {
         val dialog = MaterialDialog(this, isFullScreen).show {
 
-            dialogSize(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialogSize(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             customView(R.layout.dialog_bluetooth_scanner, scrollable = false)
             debugMode(debugMode)
         }

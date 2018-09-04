@@ -128,6 +128,30 @@ class MaterialDialog(
                 text = text,
                 typeface = this.titleFont
         )
+
+        return this
+    }
+
+    /**
+     * Shows a subTitle, or header, at the top of the dialog.
+     *
+     * @param res The string resource to display as the title.
+     * @param text The literal string to display as the title.
+     */
+    @CheckResult
+    fun subTitle(
+            @StringRes res: Int? = null,
+            text: String? = null
+    ): MaterialDialog {
+        assertOneSet("subTitle", text, res)
+
+        populateText(
+                view.titleLayout.subTitleView,
+                textRes = res,
+                text = text,
+                typeface = this.titleFont
+        )
+
         return this
     }
 
@@ -170,10 +194,12 @@ class MaterialDialog(
      */
     @CheckResult
     fun headerColor(
-            @ColorRes res: Int? = null
+            @ColorRes res: Int? = null,
+            @ColorInt color: Int? = null
     ): MaterialDialog {
         setHeaderColor(
-                colorRes = res)
+                colorRes = res,
+                colorInt =  color)
 
         return this
     }
@@ -185,10 +211,29 @@ class MaterialDialog(
      */
     @CheckResult
     fun titleColor(
-            @ColorRes res: Int? = null
+            @ColorRes res: Int? = null,
+            @ColorInt color: Int? = null
     ): MaterialDialog {
         setTitleColor(
-                colorRes = res)
+                colorRes = res,
+                colorInt = color)
+
+        return this
+    }
+
+    /**
+     * Set dilaog header color.
+     *@param colorRes The color, to change title color of dialog
+     *
+     */
+    @CheckResult
+    fun subTitleColor(
+            @ColorRes res: Int? = null,
+            @ColorInt color: Int? = null
+    ): MaterialDialog {
+        setSubTitleColor(
+                colorRes = res,
+                colorInt = color)
 
         return this
     }
