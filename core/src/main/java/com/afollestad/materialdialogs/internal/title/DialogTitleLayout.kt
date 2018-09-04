@@ -44,15 +44,17 @@ internal class DialogTitleLayout(
 
   internal lateinit var iconView: ImageView
   internal lateinit var titleView: TextView
+  internal lateinit var subTitleView: TextView
 
   override fun onFinishInflate() {
     super.onFinishInflate()
     iconView = findViewById(R.id.md_icon_title)
     titleView = findViewById(R.id.md_text_title)
+    subTitleView = findViewById(R.id.md_text_sub_title)
   }
 
   fun shouldNotBeVisible() =
-    iconView.isNotVisible() && titleView.isNotVisible()
+    iconView.isNotVisible() && titleView.isNotVisible() && subTitleView.isNotVisible()
 
   override fun onMeasure(
     widthMeasureSpec: Int,
@@ -64,8 +66,7 @@ internal class DialogTitleLayout(
     }
 
     val parentWidth = getSize(widthMeasureSpec)
-    var titleMaxWidth =
-      parentWidth - (frameMarginHorizontal * 2)
+    var titleMaxWidth = parentWidth - (frameMarginHorizontal * 2)
 
     if (iconView.isVisible()) {
       iconView.measure(
@@ -80,11 +81,8 @@ internal class DialogTitleLayout(
         makeMeasureSpec(0, UNSPECIFIED)
     )
 
-    val iconViewHeight =
-      if (iconView.isVisible()) iconView.measuredHeight else 0
-    val requiredHeight = max(
-        iconViewHeight, titleView.measuredHeight
-    )
+    val iconViewHeight = if (iconView.isVisible()) iconView.measuredHeight else 0
+    val requiredHeight = max(iconViewHeight, titleView.measuredHeight)
     val actualHeight = requiredHeight + frameMarginVertical + titleMarginBottom
 
     setMeasuredDimension(

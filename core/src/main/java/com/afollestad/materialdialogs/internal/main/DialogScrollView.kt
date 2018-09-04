@@ -22,7 +22,7 @@ internal class DialogScrollView(
   attrs: AttributeSet? = null
 ) : ScrollView(context, attrs) {
 
-  var rootView: DialogLayout? = null
+  var rootView: DialogLayoutCustom? = null
 
   private var isScrollable: Boolean = false
     get() = getChildAt(0).measuredHeight > height

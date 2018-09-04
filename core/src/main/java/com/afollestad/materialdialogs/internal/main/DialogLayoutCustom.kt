@@ -26,9 +26,7 @@ import com.afollestad.materialdialogs.internal.button.DialogActionButtonLayout
 import com.afollestad.materialdialogs.internal.title.DialogTitleLayout
 import com.afollestad.materialdialogs.utils.dimenPx
 
-val DEBUG_COLOR_PINK = Color.parseColor("#EAA3CF")
-val DEBUG_COLOR_DARK_PINK = Color.parseColor("#E066B1")
-val DEBUG_COLOR_BLUE = Color.parseColor("#B5FAFB")
+
 
 /**
  * The root layout of a dialog. Contains a [DialogTitleLayout], [DialogActionButtonLayout],
@@ -36,7 +34,7 @@ val DEBUG_COLOR_BLUE = Color.parseColor("#B5FAFB")
  *
  * @author Aidan Follestad (afollestad)
  */
-internal class DialogLayout(
+internal class DialogLayoutCustom(
   context: Context,
   attrs: AttributeSet?
 ) : FrameLayout(context, attrs) {
@@ -44,10 +42,10 @@ internal class DialogLayout(
   var maxHeight: Int = 0
   var debugMode: Boolean = false
 
-  private val frameMarginVertical = dimenPx(R.dimen.md_dialog_frame_margin_vertical)
+  private val frameMarginVertical = dimenPx(R.dimen.md_divider_height)
   private var debugPaint: Paint? = null
 
-  internal val frameMarginVerticalLess = dimenPx(R.dimen.md_dialog_frame_margin_vertical_less)
+  internal val frameMarginVerticalLess = dimenPx(R.dimen.md_divider_height)
 
   internal lateinit var dialog: MaterialDialog
   internal lateinit var titleLayout: DialogTitleLayout

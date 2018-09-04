@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <!-- header -->
+    <FrameLayout
+        android:id="@+id/dialog_base_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#007a8c"
+        android:padding="@dimen/margin_5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txt_dialog_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_toLeftOf="@+id/ll_header_inner"
+                android:gravity="start"
+                android:text="Connect with..."
+                android:textAllCaps="true"
+                android:textColor="#fff"
+                android:textSize="@dimen/txt_size_14"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/ll_header_inner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+
+                <ProgressBar
+                    android:id="@+id/pb_dialog"
+                    android:layout_width="@dimen/margin_20"
+                    android:layout_height="@dimen/margin_20"
+                    android:backgroundTint="#fff"
+                    android:gravity="center_vertical"
+                    android:indeterminateTint="#fff"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/btn_dialog_header_cross"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:background="#00000000"
+                    android:padding="@dimen/margin_10"
+                    android:scaleType="centerInside"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <!-- Main body -->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/layout_info"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<android.support.v7.widget.AppCompatTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/margin_15"-->
+    <!--android:layout_marginTop="@dimen/margin_10"-->
+    <!--android:padding="@dimen/margin_5"-->
+    <!--android:text="Available devices"-->
+    <!--android:textSize="@dimen/txt_size_12" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Signal Strength"-->
+    <!--android:textColor="#80000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:text="Excellent"-->
+    <!--android:textColor="#000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="18dp"-->
+    <!--android:text="SSID"-->
+    <!--android:textColor="#80000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:text="SSID Lit"-->
+    <!--android:textColor="#000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="18dp"-->
+    <!--android:text="Secuirty"-->
+    <!--android:textColor="#80000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:text="Secuirty Type"-->
+    <!--android:textColor="#000000" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="18dp"-->
+    <!--android:text="Password"-->
+    <!--android:textColor="#80000000" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/password"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:inputType="textPassword"-->
+    <!--android:text="Hello World"-->
+    <!--android:textColor="#000000"-->
+
+    <!--tools:ignore="HardcodedText,LabelFor" />-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/showPassword"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:layout_marginTop="18dp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Show Password"-->
+    <!--android:textColor="#000000" />-->
+
+    <!--</LinearLayout>-->
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_10"
+        android:padding="@dimen/margin_5"
+        android:text="Available devices"
+        android:textColor="#007a8c"
+        android:textSize="@dimen/txt_size_18" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:padding="@dimen/margin_5"
+        android:text="BV6000s is visible to neatby devices while bluetooth settings is open"
+        android:textColor="#757575"
+        android:textSize="@dimen/txt_size_12" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_animal_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15" />
+
+    <!-- footer -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/dialog_base_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="2">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_dialog_footer_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:text="SCAN AGAIN"
+                android:textAllCaps="true"
+                android:textColor="#757575"
+                android:textSize="@dimen/txt_size_12" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_dialog_footer_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_10"
+                android:background="@android:color/transparent"
+                android:enabled="true"
+                android:text="CONNECT"
+                android:textAllCaps="true"
+                android:textColor="#007a8c"
+                android:textSize="@dimen/txt_size_12" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

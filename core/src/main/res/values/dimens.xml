@@ -6,10 +6,10 @@
   <dimen name="md_dialog_vertical_margin">52dp</dimen>
   <dimen name="md_dialog_horizontal_margin">32dp</dimen>
 
-  <dimen name="md_dialog_title_layout_margin_bottom">20dp</dimen>
-  <dimen name="md_dialog_frame_margin_vertical">24dp</dimen>
+  <dimen name="md_dialog_title_layout_margin_bottom">16dp</dimen>
+  <dimen name="md_dialog_frame_margin_vertical">20dp</dimen>
   <dimen name="md_dialog_frame_margin_vertical_less">16dp</dimen>
-  <dimen name="md_dialog_frame_margin_horizontal">24dp</dimen>
+  <dimen name="md_dialog_frame_margin_horizontal">20dp</dimen>
 
   <dimen name="md_action_button_frame_padding_neutral">18dp</dimen>
   <dimen name="md_action_button_frame_padding">8dp</dimen>

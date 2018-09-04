@@ -38,8 +38,8 @@ internal abstract class BaseSubLayout(
     dividerPaint.isAntiAlias = true
   }
 
-  protected fun dialogParent(): DialogLayout {
-    return parent as DialogLayout
+  protected fun dialogParent(): DialogLayoutCustom {
+    return parent as DialogLayoutCustom
   }
 
   protected fun dividerPaint(): Paint {
